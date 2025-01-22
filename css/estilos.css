@@ -1,0 +1,45 @@
+body {
+    height: 100vh;
+    margin: 0;
+    background-image: url(../img/espacio.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.texto {
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+
+.tierra {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+
+    width: 400px;
+    height: 400px;
+    background: url(../img/planeta.png);
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px rgb(110, 110, 110) inset,
+                0px 0px 30px rgb(110, 110, 110);
+
+    -webkit-animation: tierra-girando 8s infinite linear;
+}
+
+@-webkit-keyframes tierra-girando {
+    from {
+        background-position: left center;
+    }
+    to {
+        background-position: -800px center;
+    }
+}
