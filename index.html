@@ -7,9 +7,83 @@
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-    <div class="tierra"></div>
+    <div class="tierra" id="planeta"></div>
     <div class="texto">
-        Planeta Tierra
+        Impacto de los gases contaminantes para el planeta
     </div>
+    <div class="texto-centro-inferior" id="miTexto">
+        Este es un mensaje en el centro inferior de la pantalla.
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th class="tabla">Gases Contaminates</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    Monóxido de carbono<br>
+                    <button onclick="co()">CO</button><br>
+                    Dióxido de azufre<br>
+                    <button onclick="so2()">SO2</button><br>
+                    Material particulado<br>
+                    <button onclick="pm()">PM</button><br>
+                    Óxidos de nitrógeno<br>
+                    <button onclick="nox()">NOx</button><br>
+                    Dióxido de carbono<br>
+                    <button onclick="co2()">CO2</button><br>
+                    Metano<br>
+                    <button onclick="ch4()">CH4</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        // Función para alternar la clase que activa/desactiva el color sobrepuesto
+        function co() {
+            const planeta = document.getElementById('planeta');
+            planeta.classList.remove('so2','pm','nox','co2','ch4')
+            planeta.classList.add('co');
+            mostrarTexto('Es un gas tóxico que puede ser mortal en altas concentraciones, ya que impide que la sangre transporte oxígeno. Contribuye a la formación de ozono troposférico, un contaminante del aire perjudicial.');
+        }
+        function so2() {
+            const planeta = document.getElementById('planeta');
+            planeta.classList.remove('co','pm','nox','co2','ch4')
+            planeta.classList.add('so2');
+            mostrarTexto('Provoca problemas respiratorios y irrita los ojos y la piel.Se transforma en ácido sulfúrico en la atmósfera, lo que puede dañar ecosistemas acuáticos y vegetación.');
+        }
+        function pm() {
+            const planeta = document.getElementById('planeta');
+            planeta.classList.remove('co','so2','nox','co2','ch4')
+            planeta.classList.add('pm');
+            mostrarTexto('Puede causar enfermedades respiratorias, cardiovasculares y cáncer de pulmón. Algunos tipos de PM pueden afectar la radiación solar y el clima regional.');
+        }
+        function nox() {
+            const planeta = document.getElementById('planeta');
+            planeta.classList.remove('co','so2','pm','co2','ch4')
+            planeta.classList.add('nox');
+            mostrarTexto('Contribuyen a la formación de smog y ozono troposférico, lo que agrava problemas de salud respiratoria. Pueden causar el crecimiento excesivo de algas en cuerpos de agua, dañando ecosistemas acuáticos.');
+        }
+        function co2() {
+            const planeta = document.getElementById('planeta');
+            planeta.classList.remove('co','so2','pm','nox','ch4')
+            planeta.classList.add('co2');
+            mostrarTexto('Es el principal gas de efecto invernadero, atrapando el calor en la atmósfera y contribuyendo al cambio climático. Aumenta la acidez del agua marina, afectando la vida marina y los ecosistemas.');
+        }
+        function ch4() {
+            const planeta = document.getElementById('planeta');
+            planeta.classList.remove('co','so2','pm','nox','co2')
+            planeta.classList.add('ch4');
+            mostrarTexto('•	Tiene un potencial de calentamiento global 25 veces mayor que el CO2 en un período de 100 años. Proviene de actividades agrícolas, vertederos y producción de petróleo y gas.');
+        }
+        function mostrarTexto(mensaje) {
+            const textoElemento = document.getElementById('miTexto');
+            textoElemento.textContent = mensaje; // Cambia el contenido del texto
+            textoElemento.style.display = 'block'; // Asegura que esté visible
+        }
+    </script>
 </body>
 </html>

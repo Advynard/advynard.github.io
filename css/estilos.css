@@ -11,7 +11,7 @@ body {
     font-family: 'Times New Roman', Times, serif;
     margin-top: 20px;
     text-align: center;
-    font-size: 50px;
+    font-size: 40px;
     font-weight: bold;
     color: rgb(255, 255, 255);
 }
@@ -24,15 +24,142 @@ body {
     left: 0;
     margin: auto;
 
-    width: 400px;
-    height: 400px;
+    width: 325px;
+    height: 325px;
     background: url(../img/planeta.png);
     background-size: cover;
     border-radius: 50%;
     box-shadow: 0px 0px 20px rgb(110, 110, 110) inset,
                 0px 0px 30px rgb(110, 110, 110);
 
-    -webkit-animation: tierra-girando 8s infinite linear;
+    -webkit-animation: tierra-girando 10s infinite linear;
+}
+
+.tierra.co::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(63, 63, 63, 0.349);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: all 0.8s ease;
+}
+
+.tierra.so2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 242, 0, 0.349);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: all 0.8s ease;
+}
+
+.tierra.pm::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(168, 70, 0, 0.349);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: all 0.8s ease;
+}
+
+.tierra.nox::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 8, 0, 0.349);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: all 0.8s ease;
+}
+
+.tierra.co2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(49, 49, 49, 0.600);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: all 0.8s ease;
+}
+
+.tierra.ch4::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(36, 36, 36, 0.800);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: all 0.8s ease;
+}
+
+table {
+    width: 175px; /* Ancho específico */
+    height: 175px; /* Alto específico */
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    position: absolute; /* Colocación absoluta */
+    top: 100px; /* Distancia desde la parte superior de la página */
+    left: 50px; /* Distancia desde la parte izquierda de la página */
+    border: #ffffff00;
+    background-color: #82828286;
+}
+
+th, td {
+    border: 1px solid #00000000;
+    text-align: center;
+    padding: 10px;
+    color: rgb(255, 255, 255);
+}
+
+th {
+    background-color: #cccccc86;
+}
+
+button {
+    padding: 5px 10px;
+    margin: 2px;
+    cursor: pointer;
+    border: #ffffff00;
+    border-radius: 10px;
+}
+
+th.tabla {
+    color: white;
+}
+
+.texto-centro-inferior {
+    position: fixed; /* Fija el elemento en la pantalla */
+    bottom: 0; /* Lo posiciona al fondo */
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Ajusta el texto para estar perfectamente centrado */
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+    color: white; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    font-size: 25px; /* Tamaño del texto */
+    text-align: center; /* Centra el texto */
 }
 
 @-webkit-keyframes tierra-girando {
@@ -40,6 +167,6 @@ body {
         background-position: left center;
     }
     to {
-        background-position: -800px center;
+        background-position: -650px center;
     }
 }
